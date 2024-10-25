@@ -198,6 +198,13 @@
     .stat-container {
       flex-direction: column;
     }
+
+    @media (max-width: 600px) {
+        button {
+          width: 40px; /* Maintain circular shape on mobile */
+          height: 40px; /* Maintain circular shape on mobile */
+          font-size: 1.5em; /* Adjust font size for better visibility */
+        }
   }
   
   .analytics {
