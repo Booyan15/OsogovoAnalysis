@@ -1,0 +1,232 @@
+/* style.css */
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+  }
+  
+  .container {
+    max-width: 900px;/* General Styling */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #0044cc;
+      color: #ffd700;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+    
+    .container {
+      text-align: center;
+      background-color: #002366;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 600px;
+      width: 90%;
+    }
+    
+    /* Header */
+    header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .team-logo {
+      width: 80px;
+      height: auto;
+      margin-bottom: 10px;
+    }
+    
+    h1 {
+      color: #ffd700;
+    }
+    
+    /* Team Name Inputs */
+    .team-names input[type="text"] {
+      font-size: 1.1em;
+      padding: 8px;
+      margin: 5px;
+      border: 2px solid #ffd700;
+      border-radius: 5px;
+      width: 100%;
+      max-width: 250px;
+      text-align: center;
+    }
+    
+    /* Stat Section */
+    .stat-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      margin-top: 20px;
+    }
+    
+    .team-stats h2 {
+      font-size: 1.2em;
+      margin-bottom: 15px;
+    }
+    
+    .stat-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+    
+    .stat-item span {
+      font-weight: bold;
+    }
+    
+    /* Buttons */
+    button {
+      width: 30px;
+      height: 30px;
+      border: none;
+      border-radius: 50%;
+      font-size: 1em;
+      color: #002366;
+      background-color: #ffd700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    button:focus {
+      outline: none;
+    }
+    
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+  }
+  
+  header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .team-logo {
+    width: 40px;
+    height: 50px;
+  }
+  
+  h1 {
+    color: #1a3f7a;
+  }
+  
+  .team-names {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+  }
+  
+  .team-names input {
+    width: 45%;
+    padding: 10px;
+    border: 2px solid #ffd700;
+    border-radius: 5px;
+    font-size: 1em;
+  }
+  
+  .stat-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  .team-stats {
+    flex: 1;
+    padding: 20px;
+    background-color: #1a3f7a;
+    color: #fff;
+    border-radius: 8px;
+  }
+  
+  h2 {
+    text-align: center;
+  }
+  
+  .stat-item {
+    display: flex;
+    justify-content: center; /* Centers the content horizontally */
+    align-items: center; /* Centers the content vertically */
+    gap: 10px; /* Space between elements */
+    font-size: 1.2em;
+  }
+  
+.stat-item span {
+  flex: 1;
+  text-align: center; /* Centers the stat label */
+}
+  
+  button {
+    width: 30px;
+    height: 30px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #ffd700;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+  
+  button:focus {
+    outline: none;
+  }
+  
+  /* Responsive */
+  @media (max-width: 600px) {
+    .team-names input {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  
+    .stat-container {
+      flex-direction: column;
+    }
+  }
+  
+  .analytics {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .stat {
+    margin: 10px 0;
+  }
+  
+  .line-container {
+    background: #e0e0e0; /* Background for the line container */
+    border-radius: 5px;
+    height: 10px; /* Height of the line container */
+    position: relative; /* For positioning the inner line */
+    overflow: hidden; /* To hide overflow */
+}
+
+.line {
+    height: 100%; /* Full height of the container */
+    width: 0; /* Start width at 0, will be updated via JS */
+    transition: width 0.3s; /* Smooth transition for width */
+}
+
+.percentages {
+    display: flex;
+    justify-content: space-between;
+}

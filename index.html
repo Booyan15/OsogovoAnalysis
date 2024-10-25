@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GFK Osogovo Match Analysis</title>
+  <link rel="shortcut icon" href="Logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <img src="Logo.png" alt="GFK Osogovo Logo" class="team-logo">
+    <h1>GFK Osogovo Match Analysis</h1>
+  </header>
+
+  <!-- Team Name Inputs -->
+  <div class="team-names">
+    <input type="text" id="team1-name" placeholder="Внеси име на домашен тим">
+    <input type="text" id="team2-name" placeholder="Внеси име на гостински тим">
+  </div>
+
+  <!-- Stat Section for Both Teams -->
+  <div class="stat-container">
+    <!-- Team 1 Stats -->
+    <div class="team-stats team1-stats">
+      <h2 id="team1-title">Домашен тим</h2>
+      <div class="stat-item">
+        <span>Голови</span>
+        <button class="btn-minus" onclick="updateStat('team1', 'goals', -1)">-</button>
+        <span id="team1-goals-count">0</span>
+        <button class="btn-plus" onclick="updateStat('team1', 'goals', 1)">+</button>
+      </div>
+      <div class="stat-item">
+        <span>Шутеви</span>
+        <button class="btn-minus" onclick="updateStat('team1', 'shots', -1)">-</button>
+        <span id="team1-shots-count">0</span>
+        <button class="btn-plus" onclick="updateStat('team1', 'shots', 1)">+</button>
+      </div>
+      <div class="stat-item">
+        <span>Додавања</span>
+        <button class="btn-minus" onclick="updateStat('team1', 'passes', -1)">-</button>
+        <span id="team1-passes-count">0</span>
+        <button class="btn-plus" onclick="updateStat('team1', 'passes', 1)">+</button>
+      </div>
+      <div class="stat-item">
+        <span>Шутеви во гол</span>
+        <button class="btn-minus" onclick="updateStat('team1', 'shotsOnGoal', -1)">-</button>
+        <span id="team1-shotsOnGoal-count">0</span>
+        <button class="btn-plus" onclick="updateStat('team1', 'shotsOnGoal', 1)">+</button>
+      </div>
+      <div class="stat-item">
+        <span>Шутеви надвор од гол</span>
+        <button class="btn-minus" onclick="updateStat('team1', 'outOfGoal', -1)">-</button>
+        <span id="team1-outOfGoal-count">0</span>
+        <button class="btn-plus" onclick="updateStat('team1', 'outOfGoal', 1)">+</button>
+      </div>
+      <div class="stat-item">
+        <span>Фаулови</span>
+        <button class="btn-minus" onclick="updateStat('team1', 'fouls', -1)">-</button>
+        <span id="team1-fouls-count">0</span>
+        <button class="btn-plus" onclick="updateStat('team1', 'fouls', 1)">+</button>
+      </div>
+      <div class="stat-item">
+        <span>Жолти Картони</span>
+        <button class="btn-minus" onclick="updateStat('team1', 'yellowCards', -1)">-</button>
+        <span id="team1-yellowCards-count">0</span>
+        <button class="btn-plus" onclick="updateStat('team1', 'yellowCards', 1)">+</button>
+      </div>
+      <div class="stat-item">
+        <span>Црвени картони</span>
+        <button class="btn-minus" onclick="updateStat('team1', 'redCards', -1)">-</button>
+        <span id="team1-redCards-count">0</span>
+        <button class="btn-plus" onclick="updateStat('team1', 'redCards', 1)">+</button>
+      </div>
+      <div class="stat-item">
+        <span>Офсајди</span>
+        <button class="btn-minus" onclick="updateStat('team1', 'offsides', -1)">-</button>
+        <span id="team1-offsides-count">0</span>
+        <button class="btn-plus" onclick="updateStat('team1', 'offsides', 1)">+</button>
+      </div>
+    </div>
+
+    <!-- Team 2 Stats -->
+    <div class="team-stats team2-stats">
+      <h2 id="team2-title">Гостински тим</h2>
+      <div class="stat-item">
+        <span>Голови</span>
+        <button class="btn-minus" onclick="updateStat('team2', 'goals', -1)">-</button>
+        <span id="team2-goals-count">0</span>
+        <button class="btn-plus" onclick="updateStat('team2', 'goals', 1)">+</button>
+      </div>
+      <div class="stat-item">
+        <span>Шутеви</span>
+        <button class="btn-minus" onclick="updateStat('team2', 'shots', -1)">-</button>
+        <span id="team2-shots-count">0</span>
+        <button class="btn-plus" onclick="updateStat('team2', 'shots', 1)">+</button>
+      </div>
+      <div class="stat-item">
+        <span>Додавања</span>
+        <button class="btn-minus" onclick="updateStat('team2', 'passes', -1)">-</button>
+        <span id="team2-passes-count">0</span>
+        <button class="btn-plus" onclick="updateStat('team2', 'passes', 1)">+</button>
+      </div>
+      <div class="stat-item">
+        <span>Шутеви во гол</span>
+        <button class="btn-minus" onclick="updateStat('team2', 'shotsOnGoal', -1)">-</button>
+        <span id="team2-shotsOnGoal-count">0</span>
+        <button class="btn-plus" onclick="updateStat('team2', 'shotsOnGoal', 1)">+</button>
+      </div>
+      <div class="stat-item">
+        <span>Шутеви надвор од гол</span>
+        <button class="btn-minus" onclick="updateStat('team2', 'outOfGoal', -1)">-</button>
+        <span id="team2-outOfGoal-count">0</span>
+        <button class="btn-plus" onclick="updateStat('team2', 'outOfGoal', 1)">+</button>
+      </div>
+      <div class="stat-item">
+        <span>Фаулови</span>
+        <button class="btn-minus" onclick="updateStat('team2', 'fouls', -1)">-</button>
+        <span id="team2-fouls-count">0</span>
+        <button class="btn-plus" onclick="updateStat('team2', 'fouls', 1)">+</button>
+      </div>
+      <div class="stat-item">
+        <span>Жолти картони</span>
+        <button class="btn-minus" onclick="updateStat('team2', 'yellowCards', -1)">-</button>
+        <span id="team2-yellowCards-count">0</span>
+        <button class="btn-plus" onclick="updateStat('team2', 'yellowCards', 1)">+</button>
+      </div>
+      <div class="stat-item">
+        <span>Црвени картони</span>
+        <button class="btn-minus" onclick="updateStat('team2', 'redCards', -1)">-</button>
+        <span id="team2-redCards-count">0</span>
+        <button class="btn-plus" onclick="updateStat('team2', 'redCards', 1)">+</button>
+      </div>
+      <div class="stat-item">
+        <span>Офсајди</span>
+        <button class="btn-minus" onclick="updateStat('team2', 'offsides', -1)">-</button>
+        <span id="team2-offsides-count">0</span>
+        <button class="btn-plus" onclick="updateStat('team2', 'offsides', 1)">+</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="analytics">
+    <h2>Аналитика</h2>
+    <div class="stat">
+      <p>Голови:</p>
+      <div class="line-container">
+        <div class="line" id="goals-line"></div>
+      </div>
+      <div class="percentages">
+        <span id="team1-goals-percentage">0%</span>
+        <span id="team2-goals-percentage">0%</span>
+      </div>
+    </div>
+    <div class="stat">
+      <p>Шутеви:</p>
+      <div class="line-container">
+        <div class="line" id="shots-line"></div>
+      </div>
+      <div class="percentages">
+        <span id="team1-shots-percentage">0%</span>
+        <span id="team2-shots-percentage">0%</span>
+      </div>
+    </div>
+    <div class="stat">
+      <p>Додавања:</p>
+      <div class="line-container">
+        <div class="line" id="passes-line"></div>
+      </div>
+      <div class="percentages">
+        <span id="team1-passes-percentage">0%</span>
+        <span id="team2-passes-percentage">0%</span>
+      </div>
+    </div>
+    <div class="stat">
+      <p>Шутеви во гол:</p>
+      <div class="line-container">
+        <div class="line" id="shotsOnGoal-line"></div>
+      </div>
+      <div class="percentages">
+        <span id="team1-shotsOnGoal-percentage">0%</span>
+        <span id="team2-shotsOnGoal-percentage">0%</span>
+      </div>
+    </div>
+    <div class="stat">
+      <p>Шутеви надвор од гол:</p>
+      <div class="line-container">
+        <div class="line" id="outOfGoal-line"></div>
+      </div>
+      <div class="percentages">
+        <span id="team1-outOfGoal-percentage">0%</span>
+        <span id="team2-outOfGoal-percentage">0%</span>
+      </div>
+    </div>
+    <div class="stat">
+      <p>Фаулови:</p>
+      <div class="line-container">
+        <div class="line" id="fouls-line"></div>
+      </div>
+      <div class="percentages">
+        <span id="team1-fouls-percentage">0%</span>
+        <span id="team2-fouls-percentage">0%</span>
+      </div>
+    </div>
+    <div class="stat">
+      <p>Жолти картони:</p>
+      <div class="line-container">
+        <div class="line" id="yellowCards-line"></div>
+      </div>
+      <div class="percentages">
+        <span id="team1-yellowCards-percentage">0%</span>
+        <span id="team2-yellowCards-percentage">0%</span>
+      </div>
+    </div>
+    <div class="stat">
+      <p>Црвени картони:</p>
+      <div class="line-container">
+        <div class="line" id="redCards-line"></div>
+      </div>
+      <div class="percentages">
+        <span id="team1-redCards-percentage">0%</span>
+        <span id="team2-redCards-percentage">0%</span>
+      </div>
+    </div>
+    <div class="stat">
+        <p>Офсајди:</p>
+        <div class="line-container">
+            <div class="line" id="offsides-line"></div>
+        </div>
+        <div class="percentages">
+            <span id="team1-offsides-percentage">0%</span>
+            <span id="team2-offsides-percentage">0%</span>
+        </div>
+    </div>
+    
+  </div>
+  
+
+<script src="script.js"></script>
